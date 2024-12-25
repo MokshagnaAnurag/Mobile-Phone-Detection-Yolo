@@ -17,7 +17,6 @@ This project demonstrates a **Mobile Phone Detection System** using OpenCV and t
 - **Ease of Use**: Minimal configuration required to get started.
 
 ---
-```markdown
 ## 🛠 Installation
 
 ### 1. Prerequisites
@@ -131,3 +130,4 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 - **[YOLO](https://pjreddie.com/darknet/yolo/)** by Joseph Redmon for the object detection algorithm.
 - **[OpenCV](https://opencv.org/)** for the computer vision tools.
+---
