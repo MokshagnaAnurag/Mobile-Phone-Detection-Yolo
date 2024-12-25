@@ -1,30 +1,36 @@
-```markdown
-# Mobile Phone Detection Using OpenCV and YOLO
+# 📱 Mobile Phone Detection Using OpenCV and YOLO
 
-This project implements a **Mobile Phone Detection System** using OpenCV and the YOLO (You Only Look Once) object detection algorithm. It uses a webcam to provide live footage and identifies mobile phones in real-time.
+![PYTHON](https://img.shields.io/badge/PYTHON-3776AB?style=for-the-badge&logo=python&logoColor=white) 
+![NUMPY](https://img.shields.io/badge/NUMPY-013243?style=for-the-badge&logo=numpy&logoColor=white) 
+![OPENCV](https://img.shields.io/badge/OPENCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![YOLO](https://img.shields.io/badge/YOLO-00FFFF?style=for-the-badge&logo=none&logoColor=white)
 
-## Features
-
-- Real-time object detection using a webcam.
-- Only detects mobile phones with high accuracy using the YOLOv3 model.
-- Displays bounding boxes and confidence scores around detected mobile phones.
-- Lightweight and optimized for efficient processing.
+This project demonstrates a **Mobile Phone Detection System** using OpenCV and the YOLOv3 (You Only Look Once) object detection algorithm. The program leverages a webcam for live footage and identifies mobile phones in real time, making it efficient and lightweight.
 
 ---
 
-## Installation
+## 🎯 Features
 
-### Prerequisites
+- **Real-Time Detection**: Detects mobile phones with high accuracy using YOLOv3.
+- **Optimized for Speed**: Ensures real-time performance for live webcam footage.
+- **Clear Visual Feedback**: Highlights detected mobile phones with bounding boxes and confidence scores.
+- **Ease of Use**: Minimal configuration required to get started.
+
+---
+```markdown
+## 🛠 Installation
+
+### 1. Prerequisites
 - Python 3.8 or later
 - pip (Python package manager)
 
-### Clone the Repository
+### 2. Clone the Repository
 ```bash
-https://github.com/MokshagnaAnurag/Mobile-Phone-Detection-Yolo.git
+git clone https://github.com/MokshagnaAnurag/Mobile-Phone-Detection-Yolo.git
 cd Mobile-Phone-Detection-Yolo
 ```
 
-### Install Dependencies
+### 3. Install Dependencies
 Install the required Python libraries:
 ```bash
 pip install opencv-python opencv-python-headless numpy
@@ -32,40 +38,40 @@ pip install opencv-python opencv-python-headless numpy
 
 ---
 
-## YOLO Configuration Files
-This project uses YOLOv3 for object detection. Ensure you have the following files in the repository directory:
+## ⚙️ YOLO Configuration Files
 
-1. **`yolov3.weights`** - Pre-trained weights file for YOLOv3.
-2. **`yolov3.cfg`** - Configuration file for YOLOv3.
-3. **`coco.names`** - List of class labels used by YOLO.
+This project uses YOLOv3 for object detection. Ensure the following files are present in the project directory:
 
-### Download Files
-- Download the YOLOv3 weights and configuration files:
-  - Weights: [yolov3.weights](https://pjreddie.com/media/files/yolov3.weights)
-  - Config: [yolov3.cfg](https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg)
-  - COCO Names: [coco.names](https://github.com/pjreddie/darknet/blob/master/data/coco.names)
+1. **`yolov3.weights`** - Pre-trained weights for YOLOv3.
+2. **`yolov3.cfg`** - YOLOv3 configuration file.
+3. **`coco.names`** - COCO dataset class labels.
 
-Place all three files in the project directory.
+### 🔗 Download Required Files
+- [YOLOv3 Weights](https://pjreddie.com/media/files/yolov3.weights)
+- [YOLOv3 Config](https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg)
+- [COCO Class Names](https://github.com/pjreddie/darknet/blob/master/data/coco.names)
+
+📂 **Ensure all three files are placed in the project directory.**
 
 ---
 
-## Usage
+## 🚀 Usage
 
-1. **Run the script**:
+1. **Run the Script**:
    ```bash
    python detect_mobile.py
    ```
 
 2. **Live Detection**:
-   - The script will start your webcam and display a live feed.
-   - Mobile phones detected in the video feed will be highlighted with bounding boxes and confidence scores.
+   - The webcam will start, displaying a live feed.
+   - Detected mobile phones will be highlighted with bounding boxes labeled `cell phone` and a confidence score.
 
 3. **Exit**:
-   - Press `q` to quit the program.
+   - Press `q` to quit the live feed.
 
 ---
 
-## File Structure
+## 🗂 File Structure
 ```
 mobile-phone-detection/
 ├── coco.names          # Class labels used by YOLO
@@ -75,43 +81,53 @@ mobile-phone-detection/
 └── README.md           # Documentation
 ```
 
----
-
-## Example Output
-When a mobile phone is detected, the program highlights it with a bounding box and displays the label `cell phone` along with the confidence score.
-
-![Demo Output](https://via.placeholder.com/800x400?text=Add+your+output+image+here)
-
----
-
-## Troubleshooting
+## ❓ Troubleshooting
 
 ### Common Issues
-1. **Gray or blank screen**:
+
+1. **Gray or Blank Screen**:
    - Ensure no other application is using the webcam.
-   - Verify your webcam index in the code (`cap = cv2.VideoCapture(0)`).
-   - Test your webcam with another application like the Windows Camera app.
+   - Verify the correct webcam index in the code:
+     ```python
+     cap = cv2.VideoCapture(0)  # Change '0' if using an external camera.
+     ```
+   - Test your webcam using the Camera app or another program.
 
-2. **YOLO configuration file not found**:
-   - Make sure `yolov3.weights`, `yolov3.cfg`, and `coco.names` are in the same directory as the Python script.
+2. **YOLO Configuration File Not Found**:
+   - Ensure the `yolov3.weights`, `yolov3.cfg`, and `coco.names` files are in the project directory.
 
-3. **Performance issues**:
-   - Reduce the input size in the blob (e.g., `(320, 320)` to `(224, 224)`).
-   - Ensure you're using a CPU-optimized version of OpenCV.
+3. **Slow Performance**:
+   - Use a smaller input blob size for faster detection (e.g., replace `(416, 416)` with `(320, 320)` in the code).
 
----
-
-## Contributing
-Contributions are welcome! Feel free to submit a pull request or open an issue to suggest improvements.
-
----
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+4. **Unable to Detect Objects**:
+   - Check the class IDs in the `coco.names` file to confirm the correct label (`cell phone`).
 
 ---
 
-## Acknowledgments
-- [YOLO](https://pjreddie.com/darknet/yolo/) by Joseph Redmon
-- [OpenCV](https://opencv.org/) for computer vision tools
-```
+## 🏗 Contributing
+
+Contributions are welcome! If you'd like to add features or fix bugs, feel free to:
+
+1. Fork the repository.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature"
+   ```
+4. Submit a Pull Request.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙌 Acknowledgments
+
+- **[YOLO](https://pjreddie.com/darknet/yolo/)** by Joseph Redmon for the object detection algorithm.
+- **[OpenCV](https://opencv.org/)** for the computer vision tools.
